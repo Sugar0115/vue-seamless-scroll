@@ -98,7 +98,9 @@ exports.default = {
       copyHtml: '',
       height: 0,
       width: 0,
-      realBoxWidth: 0 };
+      realBoxWidth: 0,
+      duration: 0
+    };
   },
 
   props: {
@@ -148,7 +150,10 @@ exports.default = {
     pos: function pos() {
       return {
         transform: 'translate(' + this.xPos + 'px,' + this.yPos + 'px)',
-        transition: 'all ' + this.ease + ' ' + this.delay + 'ms',
+        'transition-property': 'all',
+        'transition-timing-function': this.ease,
+        'transition-delay': this.delay + 'ms',
+        'transition-duration': this.duration + 'ms',
         overflow: 'hidden'
       };
     },
