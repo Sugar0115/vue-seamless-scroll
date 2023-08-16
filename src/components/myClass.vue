@@ -346,6 +346,7 @@ export default {
         const { autoPlay, isHorizontal } = this
         this._dataWarm(this.data)
         this.copyHtml = '' //清空copy
+        if (this.singleWaitTime) clearTimeout(this.singleWaitTime)
         if (isHorizontal) {
           this.height = this.$refs.wrap.offsetHeight
           this.width = this.$refs.wrap.offsetWidth
@@ -358,7 +359,7 @@ export default {
           this.$refs.realBox.style.width = slotListWidth + 'px'
           this.realBoxWidth = slotListWidth
         }
-
+        console.log(switchDelay, '...switchDelay')
         if (autoPlay) {
           this.ease = 'ease-in'
           this.delay = switchDelay
