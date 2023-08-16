@@ -153,7 +153,6 @@ exports.default = {
         'transition-property': 'all',
         'transition-timing-function': this.ease,
         'transition-delay': this.delay + 'ms',
-        'transition-duration': this.duration + 'ms',
         overflow: 'hidden'
       };
     },
