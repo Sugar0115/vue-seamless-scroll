@@ -48,6 +48,7 @@ export default {
       height: 0,
       width: 0, // 外容器宽度
       realBoxWidth: 0, // 内容实际宽度
+      duration: 0,
     }
   },
   props: {
@@ -100,7 +101,7 @@ export default {
     pos() {
       return {
         transform: `translate(${this.xPos}px,${this.yPos}px)`,
-        transition: `all 0s ${this.ease} ${this.delay}ms`,
+        transition: `all ${this.duration}ms ${this.ease} ${this.delay}ms`,
         overflow: 'hidden',
       }
     },
