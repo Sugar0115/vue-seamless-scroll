@@ -104,6 +104,7 @@ export default {
         'transition-property': 'all',
         'transition-timing-function': this.ease,
         'transition-delay': this.delay + 'ms',
+        'transition-duration': this.duration + 'ms',
         overflow: 'hidden',
       }
     },
@@ -122,6 +123,7 @@ export default {
         navigation: false,
         switchSingleStep: 134,
         switchDelay: 400,
+        duration: 0,
         switchDisabledClass: 'disabled',
         isSingleRemUnit: false, // singleWidth/singleHeight 是否开启rem度量
       }
@@ -345,7 +347,7 @@ export default {
     },
     _initMove() {
       this.$nextTick(() => {
-        const { switchDelay } = this.options
+        const { switchDelay, duration } = this.options
         const { autoPlay, isHorizontal } = this
         this._dataWarm(this.data)
         this.copyHtml = '' //清空copy
@@ -366,6 +368,7 @@ export default {
         if (autoPlay) {
           this.ease = 'ease-in'
           this.delay = switchDelay
+          this.duration = duration
         } else {
           this.ease = 'linear'
           this.delay = switchDelay

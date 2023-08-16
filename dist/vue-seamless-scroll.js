@@ -153,6 +153,7 @@ exports.default = {
         'transition-property': 'all',
         'transition-timing-function': this.ease,
         'transition-delay': this.delay + 'ms',
+        'transition-duration': this.duration + 'ms',
         overflow: 'hidden'
       };
     },
@@ -171,6 +172,7 @@ exports.default = {
         navigation: false,
         switchSingleStep: 134,
         switchDelay: 400,
+        duration: 0,
         switchDisabledClass: 'disabled',
         isSingleRemUnit: false };
     },
@@ -380,7 +382,9 @@ exports.default = {
       var _this4 = this;
 
       this.$nextTick(function () {
-        var switchDelay = _this4.options.switchDelay;
+        var _options3 = _this4.options,
+            switchDelay = _options3.switchDelay,
+            duration = _options3.duration;
         var autoPlay = _this4.autoPlay,
             isHorizontal = _this4.isHorizontal;
 
@@ -402,6 +406,7 @@ exports.default = {
         if (autoPlay) {
           _this4.ease = 'ease-in';
           _this4.delay = switchDelay;
+          _this4.duration = duration;
         } else {
           _this4.ease = 'linear';
           _this4.delay = switchDelay;
