@@ -100,7 +100,7 @@ export default {
     pos() {
       return {
         transform: `translate(${this.xPos}px,${this.yPos}px)`,
-        transition: `all ${this.ease} ${this.delay}ms`,
+        transition: `all 0s ${this.ease} ${this.delay}ms`,
         overflow: 'hidden',
       }
     },
