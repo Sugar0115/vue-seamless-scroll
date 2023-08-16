@@ -101,7 +101,10 @@ export default {
     pos() {
       return {
         transform: `translate(${this.xPos}px,${this.yPos}px)`,
-        transition: `all ${this.duration}ms ${this.ease} ${this.delay}ms`,
+        'transition-property': 'all',
+        'transition-timing-function': this.ease,
+        'transition-delay': this.delay + 'ms',
+        'transition-duration': this.duration + 'ms',
         overflow: 'hidden',
       }
     },
